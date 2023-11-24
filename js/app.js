@@ -4,7 +4,7 @@ const { createApp } = Vue
     data() {
       return {
             title: 'To Do List',
-			todos: ["CSS","HTML","Javascript","C++"],
+			todos: [],
 			newTodo: '',
       }
     },

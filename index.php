@@ -26,8 +26,8 @@
                 <div class="container">
                     <ul class="todos">
                         <li class="todos__item" v-for="(todo , i) in todos" :key="i">
-                            <p>{{ todo[i] }}</p>
-                            <span>&cross;</span>
+                            <p>{{ todo.text }}</p>
+                            <span>{{ todo.done }}</span>
                         </li>
                     </ul>
                 </div>
