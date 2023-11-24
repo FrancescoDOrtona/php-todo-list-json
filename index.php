@@ -19,14 +19,14 @@
             <header>
                 <div class=" flex-column-center page-header">
                     <h1>{{ title }}</h1>
-                    <input class="input-text" type="text" v-model:"newTodo">
+                    <input class="input-text" placeholder="Inserisci Todo" type="text" v-model:"newTodo">
                 </div>                
             </header>
             <main>
                 <div class="container">
                     <ul class="todos">
                         <li class="todos__item" v-for="(todo , i) in todos" :key="i">
-                            <p>{{ todo }}</p>
+                            <p>{{ todo[i] }}</p>
                             <span>&cross;</span>
                         </li>
                     </ul>
