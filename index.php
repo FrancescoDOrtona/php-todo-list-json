@@ -27,7 +27,8 @@
                     <ul class="todos">
                         <li class="todos__item" v-for="(todo , i) in todos" :key="i">
                             <p>{{ todo.text }}</p>
-                            <span>{{ todo.done }}</span>
+                            <span v-if="todo.done === true">&check;</span>
+                            <span v-else>&cross;</span>
                         </li>
                     </ul>
                 </div>
