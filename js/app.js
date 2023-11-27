@@ -30,6 +30,34 @@ const { createApp } = Vue
 					this.newTodo = ''
 				})
 		},
+		deleteTask(ind){
+			const data = {
+				index: ind
+			}
+			axios.post('./deleteTask.php', data,{
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			})
+			.then((res)=>{
+				console.log(res.data.todos)
+					this.todos = res.data.todos
+				})
+		},
+		toogleTask(ind){
+			const data = {
+				index: ind
+			}
+			axios.post('./toogleTask.php',data,{
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			})
+			.then((res)=>{
+				console.log(res.data.todos)
+					this.todos = res.data.todos
+				})
+		}
     },
 	created() {
 		this.fetchData()

@@ -25,8 +25,8 @@
             <main>
                 <div class="container">
                     <ul class="todos">
-                        <li class="todos__item"  v-for="(todo , i) in todos" :key="i">
-                            <p :class="{ done: todo.done }">{{ todo.text }}</p>
+                        <li class="todos__item"  v-for="(todo , i) in todos" :key="i" >
+                            <p @click="deleteTask(i)" :class="{ done: todo.done }">{{ todo.text }}</p>
                             <span v-if="todo.done === true">&check;</span>
                             <span v-else>&cross;</span>
                         </li>
