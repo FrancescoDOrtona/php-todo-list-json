@@ -7,7 +7,7 @@ $response = [
     'succes' => true,
 ];
 
-array_splice($todos, $index,1);
+array_splice($todos, $index, 1);
 
 $response['todos'] = $todos;
 $todos_string = json_encode($todos);

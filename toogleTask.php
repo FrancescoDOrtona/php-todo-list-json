@@ -8,12 +8,12 @@ $response = [
 ];
 
 if ($index >= 0) {
-$todos[$index]['done'] = !$todos[$index]['done'];
+    $todos[$index]['done'] = !$todos[$index]['done'];
 
 
-$response['todos'] = $todos;
-$todos_string = json_encode($todos);
-file_put_contents('./todos.json', $todos_string);
+    $response['todos'] = $todos;
+    $todos_string = json_encode($todos);
+    file_put_contents('./todos.json', $todos_string);
 }
 
 header('Content-type: application/json');
