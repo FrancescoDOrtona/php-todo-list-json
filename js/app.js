@@ -13,7 +13,23 @@ const { createApp } = Vue
 			axios.get('server.php').then((res) => {
 				this.todos = res.data.results
 			})
-		}
+		},
+
+		addNewTodo(){
+			const data = {
+				todo: this.newTodo,
+			}
+			axios.post('./store.php',data,{
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			})
+			.then((res)=>{
+				console.log(res.data.todos)
+					this.todos = res.data.todos
+					this.newTodo = ''
+				})
+		},
     },
 	created() {
 		this.fetchData()

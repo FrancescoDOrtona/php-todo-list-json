@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,14 @@
             <header>
                 <div class=" flex-column-center page-header">
                     <h1>{{ title }}</h1>
-                    <input class="input-text" placeholder="Inserisci Todo" type="text" v-model:"newTodo">
+                    <input class="input-text" placeholder="Inserisci Todo" type="text" v-model="newTodo" @keyup.enter="addNewTodo">
                 </div>                
             </header>
             <main>
                 <div class="container">
                     <ul class="todos">
-                        <li class="todos__item" v-for="(todo , i) in todos" :key="i">
-                            <p>{{ todo.text }}</p>
+                        <li class="todos__item"  v-for="(todo , i) in todos" :key="i">
+                            <p :class="{ done: todo.done }">{{ todo.text }}</p>
                             <span v-if="todo.done === true">&check;</span>
                             <span v-else>&cross;</span>
                         </li>
