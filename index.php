@@ -19,16 +19,21 @@
             <header>
                 <div class=" flex-column-center page-header">
                     <h1>{{ title }}</h1>
-                    <input class="input-text" placeholder="Inserisci Todo" type="text" v-model="newTodo" @keyup.enter="addNewTodo">
+                    <input class="input-text" placeholder="Insert Todo" type="text" v-model="newTodo" @keyup.enter="addNewTodo">
                 </div>                
             </header>
             <main>
                 <div class="container">
                     <ul class="todos">
-                        <li class="todos__item"  v-for="(todo , i) in todos" :key="i" >
-                            <p @click="deleteTask(i)" :class="{ done: todo.done }">{{ todo.text }}</p>
-                            <span v-if="todo.done === true">&check;</span>
-                            <span v-else>&cross;</span>
+                        <li  class="todos__item"  v-for="(todo , i) in todos" :key="i" >
+                            <p  :class="{ done: todo.done }">{{ todo.text }}</p>
+                            <div class="todos__side">
+                                <span class="color-green" v-if="todo.done === true">&check;</span>
+                                <span class="color-red" v-else>&cross;</span>
+                                <button class="bg-green" @click="toogleTask(i)">Toogle</button>
+                                <button class="bg-blue" @click="deleteTask(i)">Delete</button>
+                            </div>
+                            
                         </li>
                     </ul>
                 </div>

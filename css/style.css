@@ -48,6 +48,24 @@ body{
     text-decoration: line-through;
 }
 
+.bg-green{
+    background-color: #17FF00;
+    color: black;
+}
+
+.bg-blue{
+    background-color: #09203f;
+    color: white;
+}
+
+.color-red{
+    color: red;
+}
+
+.color-green{
+    color: #17FF00;
+}
+
 /* header */
 
 header{
@@ -88,4 +106,16 @@ header{
 
 .todos__item:last-child{
     border-bottom: none;
+}
+
+.todos__side{
+    display: flex;
+    gap: 10px;
+}
+
+.todos__side button{
+    padding: 3px 12px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-weight: bold;
 }
