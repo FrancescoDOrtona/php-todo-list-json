@@ -46,6 +46,8 @@ body{
 
 .done{
     text-decoration: line-through;
+    text-decoration-color: #17FF00;
+    text-decoration-thickness: 2px;
 }
 
 .bg-green{
@@ -66,6 +68,9 @@ body{
     color: #17FF00;
 }
 
+.icon{
+    width: 15px;
+}
 /* header */
 
 header{
@@ -111,6 +116,13 @@ header{
 .todos__side{
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+
+.todos__content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .todos__side button{
